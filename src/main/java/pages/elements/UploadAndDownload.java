@@ -13,6 +13,7 @@ import java.io.File;
 @Getter
 @Setter
 public class UploadAndDownload extends BasePage {
+
     private By uploadBtn = By.id("uploadFile");
     private By uploadNotification = By.id("uploadedFilePath");
 

@@ -87,7 +87,6 @@ public class AlertsPage extends BasePage {
         return getConfirmAlertNotification().getText();
     }
 
-    //    public boolean isConfirmMessageDisplayed() {return getConfirmAlertNotification().isDisplayed();}
 
     public WebElement getPromtBtnAlert() {
         return getDriver().findElement(promtBtnAlert);

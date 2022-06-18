@@ -24,12 +24,25 @@ public class WebTables extends BasePage {
     private By submitBtn = By.id("submit");
     private By newTableEntry = By.xpath("//*[@id=\"app\"]/div/div/div[1]/div");
     private By deleteNewUserBtn = By.id("delete-record-4");
+    private By editBtn = By.xpath("//*[@id=\"edit-record-3\"]");
 
 
     public WebTables(WebDriver driver, WebDriverWait driverWait) {
         super(driver, driverWait);
     }
 
+
+    public WebElement getEditBtn() {
+        return getDriver().findElement(editBtn);
+    }
+
+    /**
+     * Method that edits entry in the table
+     **/
+    public void clickEditBtn() {
+        getDriverWait().until(ExpectedConditions.elementToBeClickable(getEditBtn()));
+        getEditBtn().click();
+    }
 
     public WebElement getDeleteNewUserBtn() {
         return getDriver().findElement(deleteNewUserBtn);
@@ -53,9 +66,9 @@ public class WebTables extends BasePage {
             if (i.getText().contains(addedEmail)) {
                 return true;
             }
-        }return false;
+        }
+        return false;
     }
-
 
     public WebElement getAddBtn() {
         return getDriver().findElement(addBtn);
@@ -78,6 +91,20 @@ public class WebTables extends BasePage {
 
     public WebElement getEmailBar() {
         return getDriver().findElement(emailBar);
+    }
+
+    /**
+     * Method clears the email bar
+     **/
+    public void clearEmailBar() {
+        getEmailBar().clear();
+    }
+
+    /**
+     * Method fills the email bar
+     **/
+    public void enterEmail(String email) {
+        getEmailBar().sendKeys(email);
     }
 
     public WebElement getAgeBar() {

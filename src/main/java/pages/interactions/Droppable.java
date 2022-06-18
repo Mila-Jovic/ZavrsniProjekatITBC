@@ -13,18 +13,14 @@ import pages.home.BasePage;
 @Setter
 public class Droppable extends BasePage {
 
-
     private By dragMeBtn = By.id("draggable");
     private By dropInMeBtn = By.id("droppable");
-    private By frame = By.id("simpleDropContainer");
+
 
     public Droppable(WebDriver driver, WebDriverWait driverWait) {
         super(driver, driverWait);
     }
 
-    public WebElement getFrame() {
-        return getDriver().findElement(frame);
-    }
 
     public WebElement getDragMeBtn() {
         return getDriver().findElement(dragMeBtn);
@@ -36,7 +32,7 @@ public class Droppable extends BasePage {
     }
 
     public void dragAndDrop() {
-        //  getDriver().switchTo().frame(getFrame());
+
         Actions actions = new Actions(getDriver());
         actions.dragAndDrop(getDragMeBtn(), getDropInMeBtn()).build().perform();
     }

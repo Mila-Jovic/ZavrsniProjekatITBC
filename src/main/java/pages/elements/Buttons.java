@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 @Getter
 @Setter
 public class Buttons extends BasePage {
-    //private By doubleClickBtn = By.id("//*[text()='Double Click Me'");
+
     private By doubleClickBtn = By.id("doubleClickBtn");
     private By rightClickBtn = By.id("rightClickBtn");
     private By clickMeBtn = By.xpath("//*[text()='Click Me']");

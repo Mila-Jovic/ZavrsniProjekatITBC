@@ -12,8 +12,9 @@ import pages.home.BasePage;
 @Getter
 @Setter
 public class Slider extends BasePage {
+
     private Actions actions = new Actions(getDriver());
-    private By slider = By.xpath("//*[@id=\"sliderContainer\"]/div[1]/span/input");
+    private By sliderBtn = By.xpath("//*[@id=\"sliderContainer\"]/div[1]/span/input");
     private By sliderValue = By.id("sliderValue");
 
 
@@ -26,13 +27,13 @@ public class Slider extends BasePage {
         return getDriver().findElement(sliderValue);
     }
 
-    public WebElement getSlider() {
+    public WebElement getSliderBtn() {
 
-        return getDriver().findElement(slider);
+        return getDriver().findElement(sliderBtn);
     }
 
     public void fullySlideSliderRight() {
-        actions.dragAndDropBy(getSlider(), 253, 0).perform();
+        actions.dragAndDropBy(getSliderBtn(), 253, 0).perform();
     }
 
     public String sliderAtPercent() {
@@ -40,6 +41,6 @@ public class Slider extends BasePage {
     }
 
     public void fullySlideSliderLeft() {
-        actions.dragAndDropBy(getSlider(), -253, 0).perform();
+        actions.dragAndDropBy(getSliderBtn(), -253, 0).perform();
     }
 }

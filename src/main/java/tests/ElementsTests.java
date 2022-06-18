@@ -21,7 +21,7 @@ public class ElementsTests extends BaseTestPage {
         Assert.assertEquals(getTextBox().getEnteredNameText(), "Name:Mila Jovic");
     }
 
-    @Test(priority = 2)
+    @Test(priority = 4)
     public void invalidEmailTest() {
         getHomePage().driveGoToElements();
         getMenuPage().clickTextBoxOption();
@@ -59,6 +59,17 @@ public class ElementsTests extends BaseTestPage {
         getWebTables().clickDeleteNewUserBtn();
 
         Assert.assertFalse(getWebTables().checkIfNewEntryIsInTable("mila@example.com"));
+    }
+
+    @Test(priority = 7)
+    public void editNewUserTest (){
+        getHomePage().driveGoToElements();
+        getMenuPage().clickWabTablesOption();
+        getWebTables().clickEditBtn();
+        getWebTables().clearEmailBar();
+        getWebTables().enterEmail("lala@example.com");
+        getWebTables().clickSubmitBtn();
+        Assert.assertTrue(getWebTables().checkIfNewEntryIsInTable("lala@example.com"));
     }
 
     @Test(priority = 10)
