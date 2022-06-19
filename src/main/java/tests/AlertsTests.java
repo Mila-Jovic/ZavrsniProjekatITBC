@@ -48,7 +48,7 @@ public class AlertsTests extends BaseTestPage {
     public void verifyThatAlertPopUpsAfterFiveSeconds() {
 
         getAlertsPage().clickAlertDelayBtn();
-        getHomePage().fluentWait();
+
         Assert.assertTrue(getAlertsPage().getAlertText().contains("alert appeared after 5 seconds"));
         getAlertsPage().closeAlert();
     }

@@ -47,7 +47,7 @@ public class ElementsTests extends BaseTestPage {
                 , "Jovic"
                 , "mila@example.com"
                 , "33"
-                , "0"
+                , "100000"
                 , "QA");
 
         Assert.assertTrue(getWebTables().checkIfNewEntryIsInTable("mila@example.com"));
@@ -62,7 +62,7 @@ public class ElementsTests extends BaseTestPage {
     }
 
     @Test(priority = 7)
-    public void editNewUserTest (){
+    public void editWebTableEntryTest(){
         getHomePage().driveGoToElements();
         getMenuPage().clickWabTablesOption();
         getWebTables().clickEditBtn();

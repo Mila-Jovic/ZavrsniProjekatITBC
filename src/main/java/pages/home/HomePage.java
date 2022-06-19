@@ -168,12 +168,5 @@ public class HomePage extends BasePage {
         scrollDown();
         clickArtsFramesAndWindows();
     }
-
-    public void fluentWait() {
-
-        Wait<WebDriver> fluentWait = new FluentWait<>(getDriver())
-                .withTimeout(Duration.ofSeconds(30))
-                .pollingEvery(Duration.ofSeconds(10))
-                .ignoring(NoSuchElementException.class);
-    }
+    
 }
