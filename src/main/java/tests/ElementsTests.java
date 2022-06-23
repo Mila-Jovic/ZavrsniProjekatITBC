@@ -50,7 +50,7 @@ public class ElementsTests extends BaseTestPage {
                 , getSalary()
                 , getDepartment());
 
-        Assert.assertTrue(getWebTables().checkIfNewEntryIsInTable("mila@example.com"));
+        Assert.assertTrue(getWebTables().checkIfNewEntryIsInTable(getEmail()));
     }
 
     @Test(dependsOnMethods = {"addUserToTableTest"})
@@ -58,7 +58,7 @@ public class ElementsTests extends BaseTestPage {
 
         getWebTables().clickDeleteNewUserBtn();
 
-        Assert.assertFalse(getWebTables().checkIfNewEntryIsInTable("mila@example.com"));
+        Assert.assertFalse(getWebTables().checkIfNewEntryIsInTable(getEmail()));
     }
 
     @Test(priority = 7)
@@ -69,7 +69,7 @@ public class ElementsTests extends BaseTestPage {
         getWebTables().clearEmailBar();
         getWebTables().enterEmail(getEditEmail());
         getWebTables().clickSubmitBtn();
-        Assert.assertTrue(getWebTables().checkIfNewEntryIsInTable("lala@example.com"));
+        Assert.assertTrue(getWebTables().checkIfNewEntryIsInTable(getEditEmail()));
     }
 
     @Test(priority = 10)
