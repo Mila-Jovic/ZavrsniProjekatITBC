@@ -39,7 +39,7 @@ public class AlertsTests extends BaseTestPage {
 
         getAlertsPage().promptButtonAlertClick();
         Assert.assertEquals(getAlertsPage().getAlertText(), "Please enter your name");
-        getAlertsPage().alertSendKeys("Mila");
+        getAlertsPage().alertSendKeys(getFirstName());
         getAlertsPage().closeAlert();
         Assert.assertEquals(getAlertsPage().promptNotificationText(), "You entered Mila");
     }
