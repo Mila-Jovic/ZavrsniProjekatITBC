@@ -11,10 +11,10 @@ public class ElementsTests extends BaseTestPage {
         getHomePage().driveGoToElements();
         getMenuPage().clickTextBoxOption();
         getTextBox().enterData(
-                "Mila Jovic"
-                , "mila@example.com"
-                , "Novi Sad"
-                , "Novi Sad");
+                getFullName()
+                , getEmail()
+                , getCurrentAddress()
+                , getPermanentAddress());
         getHomePage().scrollDown();
         getTextBox().clickSubmitBtn();
 
@@ -26,10 +26,10 @@ public class ElementsTests extends BaseTestPage {
         getHomePage().driveGoToElements();
         getMenuPage().clickTextBoxOption();
         getTextBox().enterData(
-                "Mila Jovic"
-                , "mila@example"
-                , "Novi Sad"
-                , "Novi Sad");
+                getFullName()
+                , getInvalidEmail()
+                , getCurrentAddress()
+                , getPermanentAddress());
         getHomePage().scrollDown();
         getTextBox().clickSubmitBtn();
 
@@ -43,12 +43,12 @@ public class ElementsTests extends BaseTestPage {
         getMenuPage().clickWabTablesOption();
         getWebTables().clickAddBtn();
         getWebTables().fillInAllData(
-                "Mila"
-                , "Jovic"
-                , "mila@example.com"
-                , "33"
-                , "100000"
-                , "QA");
+                getFirstName()
+                , getLastName()
+                , getEmail()
+                , getAge()
+                , getSalary()
+                , getDepartment());
 
         Assert.assertTrue(getWebTables().checkIfNewEntryIsInTable("mila@example.com"));
     }
@@ -67,7 +67,7 @@ public class ElementsTests extends BaseTestPage {
         getMenuPage().clickWabTablesOption();
         getWebTables().clickEditBtn();
         getWebTables().clearEmailBar();
-        getWebTables().enterEmail("lala@example.com");
+        getWebTables().enterEmail(getEditEmail());
         getWebTables().clickSubmitBtn();
         Assert.assertTrue(getWebTables().checkIfNewEntryIsInTable("lala@example.com"));
     }

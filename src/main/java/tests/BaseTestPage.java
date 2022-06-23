@@ -35,6 +35,18 @@ public abstract class BaseTestPage {
     private Droppable droppable;
     private AlertsPage alertsPage;
 
+    private final String fullName = "Mila Jovic";
+    private final String email = "mila@example.com";
+    private final String invalidEmail = "mila@example";
+    private final String currentAddress = "Novi Sad";
+    private final String permanentAddress = "Novi Sad";
+    private final String firstName = "Mila";
+    private final String lastName = "Jovic";
+    private final String age = "33";
+    private final String salary = "100000";
+    private final String department = "QA";
+    private final String editEmail = "lala@example.com";
+
 
     @BeforeClass
     public void setUp() {
@@ -52,7 +64,7 @@ public abstract class BaseTestPage {
         buttons = new Buttons(driver, driverWait);
         radioButton = new RadioButton(driver, driverWait);
         uploadAndDownload = new UploadAndDownload(driver, driverWait);
-        slider = new Slider(driver,driverWait);
+        slider = new Slider(driver, driverWait);
         droppable = new Droppable(driver, driverWait);
         alertsPage = new AlertsPage(driver, driverWait);
 

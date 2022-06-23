@@ -1,7 +1,7 @@
 package pages.elements;
 
 import lombok.Setter;
-import pages.home.BasePage;
+import pages.BasePage;
 import lombok.Getter;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

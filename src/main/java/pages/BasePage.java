@@ -1,4 +1,4 @@
-package pages.home;
+package pages;
 
 import lombok.*;
 import org.openqa.selenium.WebDriver;

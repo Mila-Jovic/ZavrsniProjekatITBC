@@ -1,6 +1,6 @@
 package pages.elements;
 
-import pages.home.BasePage;
+import pages.BasePage;
 import lombok.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
