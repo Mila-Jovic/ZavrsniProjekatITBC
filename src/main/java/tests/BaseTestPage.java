@@ -72,8 +72,8 @@ public abstract class BaseTestPage {
         driver.navigate().to("https://demoqa.com/");
     }
 
-//    @AfterClass
-//    public void afterClass() {
-//        driver.close();
-//    }
+    @AfterClass
+    public void afterClass() {
+        driver.close();
+    }
 }
